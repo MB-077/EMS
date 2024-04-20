@@ -14,6 +14,8 @@ class Student(models.Model):
         if not self.pk:  # Only execute if the object is being created (not updated)
             user_login = User_Login(student_roll_no=self.student_roll_no, password=self.student_roll_no)
             user_login.save()  # Save the User_Login object
+            room = Room(uid=self.student_roll_no, student=self)
+            room.save()
         super().save(*args, **kwargs)
 
 class Room(models.Model):

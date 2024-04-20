@@ -1,0 +1,267 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>
+      EMS- an electric managing system that will do some fucking work...
+    </title>
+    <link rel="stylesheet" href="{% static 'output.css' %}" />
+    <script defer src="{% static 'script.js' %}"></script>
+  </head>
+  <!-- class="bg-[#0b0b0b]" -->
+  <body>
+    <div class="flex bg-[#0b0b0b]">
+
+      <!-- new section  -->
+      <!-- new section  -->
+      <!-- new section  -->
+      
+      
+
+      <!-- !second page user  -->
+      <!-- !second page user  -->
+      <!-- !second page user  -->
+      {% if is_logged_in %}
+      <div
+      class="w-screen h-screen admin hidden bg-white justify-center items-center"
+    >
+      <div class="w-[80vw] h-[80vh] flex shadow-xl">
+
+        <!-- ?dashboard -->
+        <!-- ?dashboard -->
+        <!-- ?dashboard -->
+
+        <div class="w-[25%] bg-white rounded-tl-md rounded-bl-md">
+          <h1 class="text-xl relative top-5 text-left px-4"> <span class="font-bold">Welcome</span> <br>
+             👋 Kanav Dhanda</h1>
+          <div class="h-full flex gap-2 justify-end flex-col relative bottom-[56px]">
+            <h3
+              class="h-14 text-base bg-slate-900 px-7 dash cursor-pointer rounded-lg w-[260px] transition-all duration-500 text-white"
+              id="1"
+            >
+              Daashboard
+            </h3>
+            <h3
+              class="h-14 text-base bg-teal-600 px-7 Imp cursor-pointer rounded-lg w-[260px] transition-all duration-500"
+              id="2"
+            >
+              Important Contacts
+            </h3>
+            <h3
+              class="h-14 text-base bg-teal-600 px-7 Pass cursor-pointer rounded-lg w-[260px] transition-all duration-500"
+              id="3"
+            >
+              Change password
+            </h3>
+            <h3
+              class="h-14 text-base bg-teal-600 px-7 sign cursor-pointer rounded-lg w-[260px] transition-all duration-500"
+              id="4"
+            >
+              Sign Out
+            </h3>
+          </div>
+        </div>
+
+        <!-- ?main profile -->
+        <!-- ?main profile -->
+        <!-- ?main profile -->
+
+        <div class="w-[75%]  rounded-tr-md rounded-br-md ">
+
+          <!-- !dashboard hai bhi dhyaan se  -->
+          <!-- !dashboard hai bhi dhyaan se  -->
+          <!-- !dashboard hai bhi dhyaan se  -->
+
+          <div class="flex h-full UserMain">
+
+            <!-- ?part1 -->
+            <!-- ?part1 -->
+            <!-- ?part1 -->
+
+            <h1 class=" w-1/3 bg-slate-900 h-full">
+              <div>
+                <img src="{% static 'assets/billi ho to humare jaisi.jpg' %}" alt="" width="120px" class="rounded-full relative top-5 left-16">
+                <div class="flex flex-col relative top-16 gap-5 w-[60%] justify-center text-center left-12">
+                  <button class="border-none rounded-sm bg-yellow-500">Profile Image</button>
+                <button class="border-none rounded-sm bg-yellow-500">Electricity Status</button>
+                <button class="border-none rounded-sm bg-yellow-500"> E-consumption</button>
+                <button class="border-none rounded-sm bg-yellow-500">Settings</button>
+                </div>
+              </div>
+            </h1>
+
+            <!-- ?part2 -->
+            <!-- ?part2 -->
+            <!-- ?part2 -->
+
+            <div class=" w-1/3 h-full">
+              
+              <div class="relative top-5">
+                <div class=" mt-8 w-[90%] mx-auto px-1">
+                  <h5 class="text-[12px] px-1">Name</h5>
+                  <h3 class="text-[18px] bg-white w-full rounded-md px-2">Lara Croft</h3>
+                </div>
+                <div class=" mt-8 w-[90%] mx-auto px-1">
+                  <h5 class="text-[12px] px-1">Roll No</h5>
+                  <h3 class="text-[18px] bg-white w-full rounded-md px-2">102303172</h3>
+                </div>
+                <div class=" mt-8 w-[90%] mx-auto px-1">
+                  <h5 class="text-[12px] px-1">Thapar EmailId</h5>
+                  <h3 class="text-[18px] bg-white w-full rounded-md px-2">kanav_be12@thapar.edu</h3>
+                </div>
+                <div class=" mt-8 w-[90%] mx-auto px-1">
+                  <h5 class="text-[12px] px-1">Branch</h5>
+                  <h3 class="text-[18px] bg-white w-full rounded-md px-2">COE</h3>
+                </div>
+                <div class=" mt-8 w-[90%] mx-auto px-1">
+                  <h5 class="text-[12px] px-1">Hostel-Room</h5>
+                  <h3 class="text-[18px] bg-white w-full rounded-md px-2">H-(A)123 </h3>
+                </div>
+                
+              </div>
+            </div>
+
+              <!--? part3 -->
+              <!--? part3 -->
+              <!--? part3 -->
+
+            <div class=" w-1/3 h-full rounded-lg">
+              <div class="relative top-8">
+                <div class=" mt-8 w-[90%] mx-auto px-1">
+                  <h5 class="text-[12px] px-1">Mobile Number</h5>
+                  <h3 class="text-[18px] bg-white w-full rounded-md px-2">91+ 9817172398</h3>
+                </div>
+                <div class=" mt-8 w-[90%] mx-auto px-1">
+                  <h5 class="text-[12px] px-1">Your Attendence History
+                  </h5>
+                  <h3 class="text-[18px] bg-white w-full rounded-md px-2">Attendence</h3>
+                </div>
+                <div class=" mt-8 w-[90%] mx-auto px-1">
+                  <h5 class="text-[12px] px-1">Feedback Section
+                  </h5>
+                  <textArea class="rounded-md w-full h-40 placeholder:text-xs p-2 border-2" placeholder="Your every Feedback matters..."></textArea>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    {% else %}
+    <div class="w-2/5 h-screen main1 transition-opacity duration-700 flex">
+      <div
+        class="h-[500px] relative top-10 flex justify-evenly items-center flex-col"
+      >
+        <h1 class="text-white w-full px-20 text-6xl mb-5">EMS</h1>
+
+        <!-- form begin -->
+        <form action="/auth/" method="post"> {% csrf_token %}
+        <div class="h-96 w-[420px] flex justify-evenly items-start flex-col px-12 mx-10">
+          <h3 class="text-2xl text-white">Sign In</h3>
+          <div class="w-full">
+            <label class="text-xs pb-1 text-white input_heading" for="email">
+              Roll Number
+            </label>
+            <input
+              class="email p-2 w-full rounded-md bg-transparent border-2 border-gray-800 placeholder:text-gray-800 text-white focus-within:placeholder:text-white focus-within:border-2 focus-within:border-white outline-none transition-all"
+              type="text"
+              placeholder="Roll Number"
+              name="name"
+              required
+            />
+          </div>
+          <div class="w-full">
+            <label class="text-xs pb-1 text-white input_heading2" for="password">
+              Password
+            </label>
+            <input
+              class="password p-2 w-full rounded-md bg-transparent border-2 border-gray-800 placeholder:text-gray-800 text-white focus-within:placeholder:text-white focus-within:border-2 focus-within:border-white outline-none transition-all"
+              type="password"
+              name="pass"
+              required
+            />
+            <a href="/" class="hover:underline text-[10px] mt-2 text-white input_footer">
+              forgot password?
+            </a>
+          </div>
+
+          <div class="flex flex-col justify-center items-end w-full">
+            <button type="submit" class="btn bg-white text-black outline-none w-full rounded-lg p-2">
+              Sign In
+            </button>
+            <a class="text-xs px-2 mt-2 text-white hover:underline" href="/">
+              Don't have an account? Sign Up
+            </a>
+          </div>
+        </div>
+      </form>
+
+      <!-- form end -->
+      </div>
+    </div>
+
+    <div
+    class="w-3/5 text-white justify-center main2 transition-opacity duration-1000 flex"
+  >
+    <div
+      class="z-10 absolute bottom-24 right-0 opacity-0 w-[600px] leading-7 px-5 services transition-all duration-1000"
+    >
+      <h1 class="text-3xl text-right text-black">Services</h1>
+      <p class="text-[15px] mt-4">
+        Lorem ipsum dolor sit amet consectetur
+        <span class="text-black"
+          >adipisicing elit. Minima, ratione. Deleniti, illo</span
+        >
+        consequatur aliquam architecto,
+        <span class="text-black"
+          >delectus veritatis vel quia, aliquid repellendus</span
+        >
+        corrupti suscipit est Lorem
+        <span class="text-black"
+          >ipsum dolor sitamet consectetur adipisicing el it. Itaque</span
+        >
+        culpa sunt delectus quib
+        <span class="text-black"
+          >usdam dicta eos explicabo voluptatum aliquid molestias </span
+        >odit?
+      </p>
+    </div>
+    <div
+      class="z-10 absolute top-28 w-[600px] leading-7 px-5 about transition-all duration-1000"
+    >
+      <h1 class="text-3xl">About Us</h1>
+      <p class="text-[15px] mt-4">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima,
+        ratione. Deleniti, illo consequatur aliquam architecto, delectus
+        veritatis vel quia, aliquid repellendus corrupti suscipit est Lorem
+        ipsum dolor sit amet consectetur adipisicing elit.
+        <span class="text-black"> Itaque</span> culpa sunt delectus
+        quibusdam dicta eos explicabo voluptatum aliquid
+        <span class="text-black">molestias </span>
+        odit?
+      </p>
+    </div>
+    <div
+      class="flex gap-3 text-white text-4xl absolute top-10 right-14 px-5"
+    >
+      <div
+        class="z-10 rounded-full w-2 h-2 bg-white circle1 cursor-pointer"
+      ></div>
+      <div
+        class="z-10 rounded-full w-2 h-2 bg-gray-800 circle2 cursor-pointer"
+      ></div>
+    </div>
+    <img
+      src="{% static 'assets/pexels-kei-scampa-1201427-4004210.jpg' %}"
+      class="absolute right-0 h-screen imga"
+      alt=""
+    />
+  </div>
+  {% endif %}
+      
+    </div>
+  </body>
+</html>
