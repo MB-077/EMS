@@ -6,6 +6,7 @@
 	<title>Admin</title>
 	<link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css">
 	<link rel="stylesheet" href="../css/admin.css">
+	<script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
 	<head>
@@ -13,17 +14,13 @@
 	  <body>
 		<div class="sidebar">
 		  <div class="logo-details">
-			<!-- <i class='bx bxl-codepen icon'></i> -->
+			
 			<img src="../assets/logo.png" alt="Logo" class = "bx licon icon">
 			<div class="logo_name">EMS</div>
 			<i class='bx bx-menu' id="btn"></i>
 		  </div>
 		  <ul class="nav-list">
-			<!-- <li>
-			  <i class='bx bx-search'></i>
-			  <input type="text" placeholder="Search...">
-			  <span class="tooltip">Search</span>
-			</li> -->
+			
 			<li>
 			  <a href="#">
 				<i class='bx bx-grid-alt'></i>
@@ -38,41 +35,7 @@
 			  </a>
 			  <span class="tooltip">Leave Requests</span>
 			</li>
-			<!-- <li>
-			  <a href="#">
-				<i class='bx bx-chat'></i>
-				<span class="links_name">Messages</span>
-			  </a>
-			  <span class="tooltip">Messages</span>
-			</li>
-			<li>
-			  <a href="#">
-				<i class='bx bx-pie-chart-alt-2'></i>
-				<span class="links_name">Analytics</span>
-			  </a>
-			  <span class="tooltip">Analytics</span>
-			</li>
-			<li>
-			  <a href="#">
-				<i class='bx bx-folder'></i>
-				<span class="links_name">File Manager</span>
-			  </a>
-			  <span class="tooltip">Files</span>
-			</li>
-			<li>
-			  <a href="#">
-				<i class='bx bx-cart-alt'></i>
-				<span class="links_name">Order</span>
-			  </a>
-			  <span class="tooltip">Order</span>
-			</li>
-			<li>
-			  <a href="#">
-				<i class='bx bx-heart'></i>
-				<span class="links_name">Saved</span>
-			  </a>
-			  <span class="tooltip">Saved</span>
-			</li> -->
+	
 			<li>
 			  <a href="#">
 				<i class='bx bx-cog'></i>
@@ -83,49 +46,52 @@
 
 
 			<li class="profile">
-			  <!-- <div class="profile-details"> -->
-				<!-- <i class='bx bx-export'></i> -->
+			
 				<a>
-				<!-- <div class="name_job"> -->
 				  <div class="name">Logout</div>
-				<!-- </div> -->
-			  <!-- </div> -->
+			
 			  <i class='bx bx-log-out' id="log_out"></i>
 			  <span class="tooltip">Logout</span>
-			  <!-- <span class="tooltip">Saved</span> -->
-			  <!-- </div> -->
+			
 			</a>
 			</li>
 		  </ul>
 		</div>
-		<section class="home-section">
-		  <div class="text">Dashboard</div>
-		  <div class="table">
-			<table>
-				<thead>
-					<tr>
-						<th>Name</th>
-						<th>Roll Number</th>
-						<th>Room</th>
-						<th>Room Status</th>
-						<th>Time</th>
-						<th>Status</th>
-						<!-- <th>Status</th>
-						<th>Action</th> -->
-					</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<th>Kanav</th> <!--name-->
-							<td>102303168</td> <!--roll number-->
-							<td>B102</td> <!-- room-->
-							<td><div class = " "><span>OFF</span></div></td> <!--room electricity-->
-							<td>9:40</td>
-							<td><div class = " "><span>ABSENT</span></div></td>
-						</tr>
 
-					</tbody>
-			</table>
+		<section class="home-section bg-red-200 w-[94.8vw]">
+		<div>
+			<h3 class="border-2  inline-block relative top-5 left-5">13 March , 2024</h3>
+		</div>
+		<div>
+			<!-- upper part -->
+		</div>
+		<div>
+			<div class="table w-full">
+				<table>
+					<thead>
+						<tr>
+							<th>Name</th>
+							<th>Roll Number</th>
+							<th>Room</th>
+							<th>Room Status</th>
+							<th>Time</th>
+							<th>Status</th>
+							
+						</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th>Kanav</th> <!--name-->
+								<td>102303168</td> <!--roll number-->
+								<td>B102</td> <!-- room-->
+								<td><div class = " "><span>OFF</span></div></td> <!--room electricity-->
+								<td>9:40</td>
+								<td><div class = " "><span>ABSENT</span></div></td>
+							</tr>
+	
+						</tbody>
+				</table>
+			</div>
 		</div>
 		</section>
 
