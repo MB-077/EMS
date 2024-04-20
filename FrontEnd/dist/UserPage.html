@@ -6,7 +6,7 @@
     <title>UserLogin-page2</title>
     <link rel="stylesheet" href="output.css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="script.js"></script>
+    <script defer src="script2.js"></script>
     <script>
       tailwind.config = {
         theme: {
@@ -19,7 +19,54 @@
       };
     </script>
   </head>
-  <body></body>
+  <body>
+    <div class="w-screen h-screen flex justify-center items-center">
+      <div class="flex w-[80%] h-[80%] gap-5">
+        <div class="w-1/4 rounded shadow-lg leftSide bg-red-400 transition-all">
+          <div
+            class="flex flex-col h-[100%] justify-between items-center leftSide_inner transition-all transition-duration-1000"
+          >
+            <div
+              class="flex justify-evenly items-center border-2 relative top-10 w-full"
+            >
+              <h3 class="text-2xl">User Profile</h3>
+              <div class="border-2 h-5 red">
+                <h3 class="h-[1px] w-[30px] bg-black"></h3>
+              </div>
+            </div>
+            <div
+              class="relative bottom-20 h-40 flex justify-evenly items-start flex-col"
+            >
+              <h3 class="dash cursor-pointer transition-all text-lg">
+                Dashboard
+              </h3>
+              <h3 class="settings cursor-pointer transition-all text-lg">
+                Settings
+              </h3>
+              <h3 class="Imp cursor-pointer transition-all text-lg">
+                Important Contacts
+              </h3>
+              <h3 class="hover:underline cursor-pointer">Log Out</h3>
+            </div>
+
+            <!-- <img
+              src="./../assets/billi ho to humare jaisi.jpg"
+              alt=""
+              class="rounded-full w-32"
+            /> -->
+          </div>
+          <div
+            class="border-2 w-[40%] mx-auto cursor-pointer flex justify-center items-center h-5 relative top-12 green hidden"
+          >
+            <h3 class="h-[1px] w-[30px] bg-black"></h3>
+          </div>
+        </div>
+        <div
+          class="w-3/4 rounded shadow-lg RightSide transition-all bg-green-400"
+        ></div>
+      </div>
+    </div>
+  </body>
 </html>
 
 <!-- <div class="w-screen h-screen admin justify-center items-center flex">
