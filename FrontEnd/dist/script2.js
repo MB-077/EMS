@@ -8,6 +8,9 @@ const left = document.querySelector(".leftSide");
 const InnerLeft = document.querySelector(".leftSide_inner");
 const input = document.querySelector("#inPUt");
 const output = document.querySelector("#outPut");
+const leaveRequest = document.querySelector(".LeaveReq");
+const User = document.querySelector(".userMain");
+const pop = document.querySelector(".PopUp");
 const D1 = {
   key: Dashboard,
   Func: function () {},
@@ -56,4 +59,16 @@ Green.addEventListener("click", function () {
 });
 input.addEventListener("input", function () {
   output.textContent = this.value + "mins";
+});
+leaveRequest.addEventListener("click", function () {
+  User.style.filter = "blur(10px)";
+  pop.classList.remove("hidden");
+  pop.classList.add("flex");
+});
+document.body.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") {
+    User.style.filter = "blur(0px)";
+    pop.classList.add("hidden");
+    pop.classList.remove("flex");
+  }
 });
