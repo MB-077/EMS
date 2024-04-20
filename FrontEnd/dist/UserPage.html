@@ -22,14 +22,14 @@
   <body>
     <div class="w-screen h-screen flex justify-center items-center">
       <div class="flex w-[80%] h-[80%] gap-5">
-        <div class="w-1/4 rounded shadow-lg leftSide transition-all">
+        <div class="w-1/4 rounded shadow-lg leftSide transition-all bg-black">
           <div
-            class="flex flex-col h-[100%] justify-between items-center leftSide_inner transition-all"
+            class="flex flex-col h-[100%] justify-between items-center leftSide_inner transition-all text-white"
           >
             <div
               class="flex justify-evenly items-center relative top-10 w-full"
             >
-              <h3 class="text-2xl">User</h3>
+              <h3 class="text-2xl">User Profile</h3>
               <div class="border-2 h-5 red">
                 <h3 class="h-[1px] w-[30px] bg-black cursor-pointer"></h3>
               </div>
@@ -54,9 +54,11 @@
             </div>
           </div>
           <div
-            class="border-2 w-[40%] mx-auto cursor-pointer flex justify-center items-center h-5 relative top-12 green hidden"
+            class="w-[40%] mx-auto cursor-pointer flex justify-center items-center h-5 relative top-12 green hidden"
           >
-            <h3 class="h-[1px] w-[30px] bg-black"></h3>
+            <h3 class="h-[1px] w-[30px] bg-white"></h3>
+            <h3 class="h-[1px] w-[30px] bg-white"></h3>
+            <h3 class="h-[1px] w-[30px] bg-white"></h3>
           </div>
         </div>
         <div class="w-3/4 rounded shadow-lg RightSide transition-all">
@@ -74,31 +76,35 @@
             </div>
           </div>
           <div class="flex h-[340px]">
-            <div
-              class="bg-yellow-300 w-1/2 h-full flex flex-col justify-center items-center"
-            >
-              <div
-                class="border-2 h-[60%] flex flex-col justify-evenly w-[80%] px-5"
-              >
-                <div class="text-left">
-                  <h3 class="">Room No.</h3>
-                  <h3 class="text-xl">A-123</h3>
+            <div class="w-1/2 h-full flex flex-col justify-center items-center">
+              <div class="h-[60%] flex flex-col justify-evenly w-[80%] px-5">
+                <div class="text-left flex flex-col gap-2 mb-3">
+                  <h3 class="text-sm">Room No.</h3>
+                  <h3
+                    class="text-lg px-2 shadow-lg bg-[#fbfbfb] rounded-md h-10 flex items-center"
+                  >
+                    A-123
+                  </h3>
                 </div>
 
-                <div class="text-left">
-                  <h3>Current Status</h3>
-                  <h3 class="text-xl">Present</h3>
+                <div class="text-left mb-4 gap-2">
+                  <h3 class="text-sm mb-1">Current Status</h3>
+                  <h3
+                    class="text-lg px-2 shadow-lg rounded-md bg-[#fbfbfb] h-10 flex items-center"
+                  >
+                    Present
+                  </h3>
                 </div>
-                <div class="text-left bg-white px-2 w-[100%] rounded-sm">
-                  <h3 class="text-xl">Change Password</h3>
+                <div
+                  class="text-left bg-[#fbfbfb] px-2 w-[100%] rounded-md shadow-lg h-10 flex items-center"
+                >
+                  <h3 class="text-lg">Change Password</h3>
                 </div>
               </div>
             </div>
-            <div
-              class="px-10 flex flex-col justify-center bg-red-200 w-1/2 h-full"
-            >
+            <div class="px-10 flex flex-col justify-center w-1/2 h-full gap-3">
               <form action="">
-                <div class="flex flex-col w-[50%] gap-2">
+                <div class="flex flex-col bm-10 gap-2">
                   <label for="range"
                     >How long do you need the time relief?</label
                   >
@@ -113,12 +119,19 @@
                 </div>
                 <span id="outPut">30 min</span>
                 <br />
-                <button class="border-2 rounded-md px-5 h-8 mt-5" type="submit">
+                <button
+                  class="border-2 rounded-md px-5 h-8 mt-5 bg-[#fbfbfb] shadow-lg"
+                  type="submit"
+                >
                   Submit
                 </button>
               </form>
               <div>
-                <h3>Forward Leave Request</h3>
+                <h3
+                  class="text-left bg-[#fbfbfb] px-2 w-[100%] rounded-md shadow-lg h-10 flex items-center relative top-3"
+                >
+                  Forward Leave Request
+                </h3>
               </div>
             </div>
           </div>
