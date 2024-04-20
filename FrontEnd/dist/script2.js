@@ -6,6 +6,8 @@ const Green = document.querySelector(".green");
 const right = document.querySelector(".RightSide");
 const left = document.querySelector(".leftSide");
 const InnerLeft = document.querySelector(".leftSide_inner");
+const input = document.querySelector("#inPUt");
+const output = document.querySelector("#outPut");
 const D1 = {
   key: Dashboard,
   Func: function () {},
@@ -51,4 +53,7 @@ Red.addEventListener("click", function () {
 
 Green.addEventListener("click", function () {
   readMe();
+});
+input.addEventListener("input", function () {
+  output.textContent = this.value + "mins";
 });
