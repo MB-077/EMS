@@ -84,39 +84,39 @@ const CirclsToggle = () => {
 };
 
 //event handler
-let currentAccount;
-btn.addEventListener("click", function (e) {
-  e.preventDefault();
-  currentAccount = accounts.find((acc) => acc.Id === eMail.value);
-  console.log(currentAccount);
-  if (currentAccount?.passW === Number(pAss.value)) {
-    HideNSeek();
-  }
-});
-document.body.addEventListener("keydown", function (e) {
-  currentAccount = accounts.find((acc) => acc.Id === eMail.value);
-  console.log(currentAccount);
-  if (currentAccount?.passW === Number(pAss.value)) {
-    if (e.key === "Enter") {
-      HideNSeek();
-    }
-  }
-});
+// let currentAccount;
+// btn.addEventListener("click", function (e) {
+//   e.preventDefault();
+//   currentAccount = accounts.find((acc) => acc.Id === eMail.value);
+//   console.log(currentAccount);
+//   if (currentAccount?.passW === Number(pAss.value)) {
+//     HideNSeek();
+//   }
+// });
+// document.body.addEventListener("keydown", function (e) {
+//   currentAccount = accounts.find((acc) => acc.Id === eMail.value);
+//   console.log(currentAccount);
+//   if (currentAccount?.passW === Number(pAss.value)) {
+//     if (e.key === "Enter") {
+//       HideNSeek();
+//     }
+//   }
+// });
 
-eMail.addEventListener("focus", function () {
-  onFocus(inputHead);
-});
-eMail.addEventListener("blur", function () {
-  onBlur(inputHead);
-});
-pAss.addEventListener("focus", function () {
-  onFocus(inputHead2);
-  onFocus2(inputfoot);
-});
-pAss.addEventListener("blur", function () {
-  onBlur(inputHead2);
-  onBlur2(inputfoot);
-});
+// eMail.addEventListener("focus", function () {
+//   onFocus(inputHead);
+// });
+// eMail.addEventListener("blur", function () {
+//   onBlur(inputHead);
+// });
+// pAss.addEventListener("focus", function () {
+//   onFocus(inputHead2);
+//   onFocus2(inputfoot);
+// });
+// pAss.addEventListener("blur", function () {
+//   onBlur(inputHead2);
+//   onBlur2(inputfoot);
+// });
 
 Cir1.addEventListener("click", function () {
   About.style.transform = "translateX(  0px)";
