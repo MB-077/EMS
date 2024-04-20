@@ -294,9 +294,77 @@
 	font-weight: 500;
 	margin: 18px;
   }
+
+  /* table{
+	
+	border : 2px solid black;
+	padding : 10px;
+  }
+  th,td{
+	padding : 10px;
+	text-align: center;
+	border: 2px solid grey;
+  } */
+
+
+/* ... (previous styles) ... */
+
+/* Table Styles */
+table {
+    border:none;
+	border-radius: 24px;
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: center;
+    border: none;
+}
+
+thead th {
+	border-top: 1px solid #e0e0e0;
+    background-color: #11101d;
+    color: #ffffff;
+    font-weight: 500;
+}
+
+tbody tr {
+    transition: background-color 0.3s ease;
+}
+
+tbody tr:hover {
+    background-color: #f0f0f0; /* Light gray background on hover */
+}
+
+tbody td {
+    border-bottom: 1px solid #e0e0e0; /* Light gray border */
+}
+
+/* Hover effect for table */
+.table-container {
+    margin-top: 20px;
+    overflow: auto; /* Added to enable scrolling if the table exceeds container height */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    transition: box-shadow 0.3s ease;
+}
+
+.table-container:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); /* Slight increase in shadow on hover */
+}
+
+
+
   @media (max-width: 420px) {
 	.sidebar li .tooltip {
 	  display: none;
 	}
   }
+
+
   
