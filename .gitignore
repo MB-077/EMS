@@ -1,1 +1,3 @@
 venv/
+EMS/EMS/__pycache__/
+db.sqlite3
