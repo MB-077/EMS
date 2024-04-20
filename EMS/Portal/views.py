@@ -13,10 +13,25 @@ def home(request):
         return render(request, "index.html")
 
 def dashboard(request):
-    context = {
-        "username" : request.COOKIES["username"]
-    }
-    return render(request, "dashboard.html", context)
+    user = User_Login.objects.get(student_roll_no=request.COOKIES.get("username"))
+
+    if user.user_type == "Admin":
+        datas = []
+        n = User_Login.objects.exclude(user_type="Admin")
+        print(f'\n{n}\n')
+        for pk in n:
+            data = {}
+            data["student_name"] = Student.objects.get(pk=pk).student_name
+            data["student_roll_no"] = Student.objects.get(pk=pk).student_roll_no
+            data["student_room_no"] = Student.objects.get(pk=pk).student_room_no
+            data["room_light_status"] =  Room.objects.get(pk=pk).room_light_status
+            data["student_hostel_out_time"] = Student.objects.get(pk=pk).student_hostel_out_time
+            data["student_hostel_status"] = Student.objects.get(pk=pk).student_hostel_status
+            datas.append(data)
+        return render(request, "admin.html", {"datas" : datas, "username" : request.COOKIES.get("username")})
+    else:
+        return render(request, "dashboard.html", {"username" : request.COOKIES.get("username")})
+    
 
 def logout(request):
     response = HttpResponseRedirect(reverse("home"))
@@ -38,7 +53,7 @@ def auth_account(request):
             response = HttpResponseRedirect(reverse("dashboard"))  # Set "username" cookie 
             response.set_cookie("username", entered_rollno)
             if not user.remember_me:
-                response.session.set_expiry(0)
+                request.session.set_expiry(0)
             else:
                 response.set_cookie("logged", "True")  # Set LOGGED as TRUE iff Remember_Me = True
             return response
