@@ -14,36 +14,12 @@ const Second = document.querySelector(".second");
 const Imagey = document.querySelector(".imga");
 const Admin = document.querySelector(".admin");
 const UserMain = document.querySelector(".UserMain");
-const Dashboard = document.querySelector(".dash");
-const impCont = document.querySelector(".Imp");
-const Pass = document.querySelector(".Pass");
-const SignOut = document.querySelector(".sign");
 
 //info
 const account1 = { Id: "krrish_be12@thapar.edu", passW: 12345 };
 const account2 = { Id: "marul_be12@thapar.edu", passW: 23456 };
 const account3 = { Id: "kanav_be12@thapar.edu", passW: 34567 };
 const accounts = [account1, account2, account3];
-const D1 = {
-  key: Dashboard,
-  Func: function () {
-    UserMain.classList.remove("hidden");
-    UserMain.classList.add("flex");
-  },
-};
-const Imp = {
-  key: impCont,
-  Func: function () {},
-};
-const Pa = {
-  key: Pass,
-  Func: function () {},
-};
-const So = {
-  key: SignOut,
-  Func: function () {},
-};
-const selectArr = [D1, Imp, Pa, So];
 
 //function
 const onFocus = (head) => {
@@ -83,41 +59,6 @@ const CirclsToggle = () => {
   Cir2.classList.toggle("bg-gray-800");
 };
 
-//event handler
-let currentAccount;
-btn.addEventListener("click", function (e) {
-  e.preventDefault();
-  currentAccount = accounts.find((acc) => acc.Id === eMail.value);
-  console.log(currentAccount);
-  if (currentAccount?.passW === Number(pAss.value)) {
-    HideNSeek();
-  }
-});
-document.body.addEventListener("keydown", function (e) {
-  currentAccount = accounts.find((acc) => acc.Id === eMail.value);
-  console.log(currentAccount);
-  if (currentAccount?.passW === Number(pAss.value)) {
-    if (e.key === "Enter") {
-      HideNSeek();
-    }
-  }
-});
-
-eMail.addEventListener("focus", function () {
-  onFocus(inputHead);
-});
-eMail.addEventListener("blur", function () {
-  onBlur(inputHead);
-});
-pAss.addEventListener("focus", function () {
-  onFocus(inputHead2);
-  onFocus2(inputfoot);
-});
-pAss.addEventListener("blur", function () {
-  onBlur(inputHead2);
-  onBlur2(inputfoot);
-});
-
 Cir1.addEventListener("click", function () {
   About.style.transform = "translateX(  0px)";
   About.classList.remove("opacity-0");
@@ -131,25 +72,4 @@ Cir2.addEventListener("click", function () {
   Services.style.transform = "translateX(-20px)";
   Services.classList.remove("opacity-0");
   CirclsToggle();
-});
-selectArr.forEach((el) => {
-  const name = el.key;
-  const display = el.Func;
-  name.addEventListener("click", function (e) {
-    const arr = selectArr.slice();
-    name.classList.add("bg-slate-900");
-    name.classList.add("text-white");
-    name.classList.remove("bg-teal-600");
-    display();
-    arr.splice(arr.indexOf(el), 1);
-    console.log(arr);
-    arr.forEach((ele) => {
-      const name2 = ele.key;
-      console.log(name2);
-      name2.classList.remove("bg-slate-900");
-      name2.classList.add("bg-teal-600");
-      name2.classList.add("text-black");
-      name2.classList.remove("text-white");
-    });
-  });
 });

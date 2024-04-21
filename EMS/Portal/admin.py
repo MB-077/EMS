@@ -11,7 +11,6 @@ class StudentAdmin(admin.ModelAdmin):
       room = Room(uid=obj.student_roll_no, student=obj)
       room.save()
 
-
 admin.site.register(Student, StudentAdmin)
 admin.site.register(Room)
 admin.site.register(User_Login)

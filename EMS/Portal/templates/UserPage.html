@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UserLogin-page2</title>
+    <link rel="stylesheet" href="output.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="script2.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#999",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body>
+    <div
+      class="w-screen h-screen flex justify-center items-center userMain absolute transition-all"
+    >
+      <div class="flex w-[80%] h-[80%] gap-5">
+        <div
+          class="w-1/4 rounded shadow-lg leftSide transition-all bg-[#11101d]"
+        >
+          <div
+            class="flex flex-col h-[100%] justify-between items-center leftSide_inner transition-all text-white"
+          >
+            <div
+              class="flex justify-evenly items-center relative top-10 w-full"
+            >
+              <h3 class="text-2xl">EMS</h3>
+              <div class="h-5 red mt-5">
+                <h3 class="h-[2px] w-[20px] bg-white cursor-pointer"></h3>
+              </div>
+            </div>
+            <div
+              class="relative bottom-20 h-40 flex justify-evenly items-start flex-col"
+            >
+              <h3
+                class="dash cursor-pointer w-[200px] h-8 px-2 rounded-md transition-all text-lg hover:bg-white hover:text-black"
+              >
+                Dashboard
+              </h3>
+              <h3
+                class="settings cursor-pointer w-[200px] h-8 px-2 rounded-md transition-all text-lg hover:bg-white hover:text-black"
+              >
+                Settings
+              </h3>
+              <h3
+                class="Imp cursor-pointer w-[200px] h-8 px-2 rounded-md transition-all text-lg hover:bg-white hover:text-black"
+              >
+                Important Contacts
+              </h3>
+              <form action="">
+                <button
+                  type="submit"
+                  class="cursor-pointer w-[200px] h-8 px-2 rounded-md transition-all text-lg hover:bg-white hover:text-black text-left"
+                >
+                  Log Out
+                </button>
+              </form>
+            </div>
+          </div>
+          <div
+            class="w-[40%] mx-auto cursor-pointer justify-center items-center h-5 relative top-12 green hidden text-white text-4xl"
+          >
+            <!-- <h3 class="h-[1px] w-[30px] bg-white"></h3>
+            <h3 class="h-[1px] w-[30px] bg-white"></h3>
+            <h3 class="h-[1px] w-[30px] bg-white"></h3> -->
+            +
+          </div>
+        </div>
+
+        <div class="w-3/4 rounded shadow-lg RightSide transition-all">
+          <div
+            class="relative top-10 left-10 flex w-fit justify-center items-center gap-7"
+          >
+            <img
+              src="./../assets/billi ho to humare jaisi.jpg"
+              alt=""
+              class="rounded-full w-32"
+            />
+            <div>
+              <h3 class="text-lg font-bold">Kanav Dhanda</h3>
+              <h3 class="text-xs text-gray-500" id="datetime"></h3>  <!-- mention name of hostel here -->
+            </div>
+          </div>
+          <div class="flex h-[340px]">
+            <div class="w-1/2 h-full flex flex-col justify-center items-center">
+              <div class="h-[60%] flex flex-col justify-evenly w-[80%] px-5">
+                <div class="text-left flex flex-col gap-2 mb-3">
+                  <h3 class="text-sm">Hostel</h3>
+                  <h3
+                    class="text-lg px-2 shadow-lg bg-[#fbfbfb] rounded-md h-10 flex items-center"
+                  >
+                    K
+                  </h3>
+                </div>
+                <div class="text-left flex flex-col gap-2 mb-3">
+                  <h3 class="text-sm">Room No.</h3>
+                  <h3
+                    class="text-lg px-2 shadow-lg bg-[#fbfbfb] rounded-md h-10 flex items-center"
+                  >
+                    A-123
+                  </h3>
+                </div>
+
+                <div class="text-left mb-4 gap-2">
+                  <h3 class="text-sm mb-1">Current Status</h3>
+                  <h3
+                    class="text-lg px-2 shadow-lg rounded-md bg-[#fbfbfb] h-10 flex items-center"
+                  >
+                    Present
+                  </h3>
+                </div>
+              </div>
+            </div>
+            <div class="px-10 flex flex-col justify-center w-1/2 h-full gap-3">
+              <form action="">
+                <div class="flex flex-col bm-10 gap-2">
+                  <label for="range"
+                    >How long do you need the time relief?</label
+                  >
+                  <input
+                    type="range"
+                    step="10"
+                    max="60"
+                    min="0"
+                    id="inPUt"
+                    class="transition-all"
+                  />
+                </div>
+                <span id="outPut">30 min</span>
+                <br />
+                <button
+                  class="border-2 rounded-md px-5 h-8 mt-5 bg-[#fbfbfb] shadow-lg"
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </form>
+              <div>
+                <button
+                  type="button"
+                  class="text-left bg-[#fbfbfb] px-2 w-[100%] rounded-md shadow-lg h-10 flex items-center relative top-3 LeaveReq"
+                >
+                  Forward Leave Request
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="relative hidden justify-center items-center h-screen w-screen PopUp z-10 transition-all duration-500"
+    >
+      <div class="w-[60%] h-[50%] bg-green-400">
+        <div><h2>Request Permission</h2></div>
+        <div>
+          <div class="text-left flex flex-col gap-2 mb-3">
+            <h3 class="text-sm">Permission Date:</h3>
+            <input
+              class="text-lg px-2 shadow-lg bg-[#fbfbfb] rounded-md h-10 flex items-center" type="date" placeholder="1/01/2024"
+            >
+              A-123
+            </input>
+          </div>
+          <div class="text-left flex flex-col gap-2 mb-3">
+            <h3 class="text-sm">Out Time:</h3>
+            <h3
+              class="text-lg px-2 shadow-lg bg-[#fbfbfb] rounded-md h-10 flex items-center"
+            >
+              A-123
+            </h3>
+          </div>
+          <div class="text-left flex flex-col gap-2 mb-3">
+            <h3 class="text-sm">In Time</h3>
+            <h3
+              class="text-lg px-2 shadow-lg bg-[#fbfbfb] rounded-md h-10 flex items-center"
+            >
+              A-123
+            </h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

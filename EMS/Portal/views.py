@@ -30,7 +30,7 @@ def dashboard(request):
             datas.append(data)
         return render(request, "admin.html", {"datas" : datas, "username" : request.COOKIES.get("username")})
     else:
-        return render(request, "dashboard.html", {"username" : request.COOKIES.get("username")})
+        return render(request, "UserPage.html", {"username" : request.COOKIES.get("username")})
     
 
 def logout(request):
