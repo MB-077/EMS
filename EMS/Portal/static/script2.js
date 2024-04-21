@@ -11,6 +11,7 @@ const output = document.querySelector("#outPut");
 const leaveRequest = document.querySelector(".LeaveReq");
 const User = document.querySelector(".userMain");
 const pop = document.querySelector(".PopUp");
+const Alert = document.querySelector(".btnAlert");
 const D1 = {
   key: Dashboard,
   Func: function () {},
@@ -93,3 +94,8 @@ $(document).ready(function(){
   //     $('#output').text($(this).val() + ' mins');
   // });
 });
+
+Alert.addEventListener("click", function (e) {
+  e.preventDefault();
+  alert('Request Sent Successfully!')
+})

@@ -146,8 +146,9 @@
                 <span id="outPut">30 min</span>
                 <br />
                 <button
-                  class="border-2 rounded-md px-5 h-8 mt-5 bg-[#fbfbfb] shadow-lg"
+                  class="border-2 rounded-md px-5 h-8 mt-5 bg-[#fbfbfb] shadow-lg btnAlert"
                   type="submit"
+                  {% comment %} id="alertBtn" {% endcomment %}
                 >
                   Submit
                 </button>
@@ -196,10 +197,18 @@
             </h3>
           </div>
           <div>
-            <button type="submit" class="bg-white w-24 h-10 rounded ml-20 mt-2 border-1 border-[#fbfbfb] shadow-lg">Submit</button>
+            <button type="submit" class="bg-white w-24 h-10 rounded ml-20 mt-2 border-1 border-[#fbfbfb] shadow-lg btnAlert2">Submit</button>
           </div>
         </div>
       </div>
     </div>
+    <script>
+      document.querySelector('.btnAlert').addEventListener('click', function () {
+       alert('Request Sent');
+      });
+      document.querySelector('.btnAlert2').addEventListener('click', function () {
+        alert('Request Sent');
+       });
+    </script>
   </body>
 </html>

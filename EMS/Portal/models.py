@@ -8,7 +8,7 @@ class Student(models.Model):
     student_hostel_out_time = models.TimeField(null=True, blank=True)
 
     def __str__(self):
-        return f"{self.student_roll_no}, Room: {self.student_room_no}"
+        return f"{self.student_roll_no}, Room: {self.student_room_no}, Name: {self.student_name}"
 
 class Room(models.Model):
     uid = models.CharField(max_length=10, unique=True, primary_key=True)
