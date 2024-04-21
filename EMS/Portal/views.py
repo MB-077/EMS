@@ -24,9 +24,9 @@ def dashboard(request):
             data["student_name"] = Student.objects.get(pk=pk.student_roll_no).student_name
             data["student_roll_no"] = Student.objects.get(pk=pk.student_roll_no).student_roll_no
             data["student_room_no"] = Student.objects.get(pk=pk.student_roll_no).student_room_no
-            data["room_light_status"] =  change_e_status(Room.objects.get(pk=pk.student_roll_no).room_light_status)
             data["student_hostel_out_time"] = Student.objects.get(pk=pk.student_roll_no).student_hostel_out_time
             data["student_hostel_status"] = change_status(Student.objects.get(pk=pk.student_roll_no).student_hostel_status)
+            data["room_light_status"] =  "Off" if data["student_hostel_status"] == "Outside Hostel" else "On"
             datas.append(data)
         return render(request, "admin.html", {"datas" : datas, "username" : request.COOKIES.get("username")})
     else:
@@ -70,12 +70,6 @@ def auth_account(request):
 
 def change_status(hostel_status):
     if hostel_status == True:
-        return "Yes"
+        return "Inside Hostel"
     else :
-        return "No"
-
-def change_e_status(elec_status):
-    if elec_status == True:
-        return "On"
-    else :
-        return "Off"
+        return "Outside Hostel"
