@@ -20,9 +20,16 @@
         <div
           class="h-[500px] relative top-10 flex justify-evenly items-center flex-col"
         >
-          <h1 class="text-white w-full px-20 text-6xl">EMS</h1>
+          <div class="flex flex-row items-center w-40 h-40">
+            <img
+              src="{% static 'assets/logo.png' %}"
+              alt=""
+              class="w-30 h-30"
+            />
+            <h1 class="text-4xl text-white">EMS</h1>
+          </div>
           <div
-            class="h-96 w-[450px] flex items-start flex-col px-12 mx-10 justify-center gap-10"
+            class="h-96 w-[450px] flex items-start flex-col px-12 mx-10 justify-center gap-10  relative top-10"
           >
           <form action="{% url 'auth' %}" method="post" class=" h-80 flex flex-col justify-evenly"> {% csrf_token %}
             <h3 class="text-2xl text-white">Sign In</h3>
@@ -59,7 +66,7 @@
                   <input type="checkbox" name="rem_me" id="" />
                   <label class="text-white text-[10px]" for="checkbox"
                     >remember me</label -->
-                  >
+
                 </div>
               </div>
             </div>
