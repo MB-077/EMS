@@ -1,0 +1,123 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Admin</title>
+	<link rel="shortcut icon" href="{% static 'assets/logo.png' %}" type="image/x-icon">
+	<link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css">
+	<link rel="stylesheet" href="{% static 'admin.css' %}">
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script defer src="{% static 'admin.js' %}"></script>
+</head>
+<body>
+	<head>
+	  
+	  <body>
+		<div class="sidebar">
+		  <div class="logo-details">
+			
+			<img src="{%static 'assets/logo.png' %}" alt="Logo" class = "bx licon icon">
+			<div class="logo_name">EMS</div>
+			<i class='bx bx-menu' id="btn"></i>
+		  </div>
+		  <ul class="nav-list">
+			
+			<li>
+			  <a href="#">
+				<i class='bx bx-grid-alt'></i>
+				<span class="links_name">Dashboard</span>
+			  </a>
+			  <span class="tooltip">Dashboard</span>
+			</li>
+			<li>
+			  <a href="#">
+				<i class='bx bx-user'></i>
+				<span class="links_name">Leave Requests</span>
+			  </a>
+			  <span class="tooltip">Leave Requests</span>
+			</li>
+	
+			<li>
+			  <a href="#">
+				<i class='bx bx-cog'></i>
+				<span class="links_name">Settings</span>
+			  </a>
+			  <span class="tooltip">Settings</span>
+			</li>
+
+
+			<li class="profile">
+			
+				<a href="{% url 'logout' %}">
+				  <div class="name">Logout</div>
+			
+			  <i class='bx bx-log-out' id="log_out"></i>
+			  <span class="tooltip">Logout</span>
+			
+			</a>
+			</li>
+		  </ul>
+		</div>
+
+		<section class="home-section  w-[94.8vw]">
+		
+		<div class="flex bg-white justify-evenly h-20 items-center relative top-20 left-16 w-[90%] rounded-md">
+			<div class="bg-green-200 w-1/3 px-20 mx-10 text-center rounded-md">
+				<h3 class='text-center' >Total Present</h3>
+				<h3 class='text-center'>4</h3>
+			</div>
+			<div class="bg-green-200 w-1/3 px-20 mx-10 text-center rounded-md">
+				<h3 class='text-center'>Total Absent</h3>
+				<h3 class="text-center">2</h3>
+			</div>
+			<div class="bg-green-200 w-1/3 px-20 mx-10 text-center rounded-md">
+				<h3 class='text-center'>Active Now</h3>
+				<h3 class='text-center'>2</h3>
+			</div>
+		</div>
+		<div>
+			<div class="bg-white rounded-md w-[90%] h-[300px] relative top-24 left-16">
+				<div class="table w-[100%] h-[60%] px-24 ">
+					<table >
+						<thead>
+							<tr class="rounded-md bg-green-200">
+								<th>Name</th>
+								<th>Roll Number</th>
+								<th>Room</th>
+								<th>Room Status</th>
+								<th>Time</th>
+								<th>Status</th>
+								
+							</tr>
+							</thead>
+							<tbody>
+								{% for data in datas %}
+									<tr>
+										{% for key, value in data.items %}
+											{% if key == 'username' %}
+											{% endif %}
+		
+											{% if key == 'room_light_status' or key == 'student_hostel_status' %}
+												<td><div class = " "><span>{{ value }}</span></div></d>
+											{% else %}
+												<td>{{ value }}</td>
+											{% endif %}
+										{% endfor %}
+									</tr>
+								{% endfor %}
+							</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		</section>
+
+
+		
+	
+		<script src="{% static 'admin.js' %}"></script>
+	  </body>
+</body>
+</html>

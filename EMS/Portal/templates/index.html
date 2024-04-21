@@ -1,0 +1,143 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="{% static 'assets/logo.png' %}" type="image/x-icon">
+    <title>
+      EMS - Electricity Management System 
+    </title>
+    <link rel="stylesheet" href="{% static 'output.css' %}" />
+    <script defer src="{% static 'script.js' %}"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+  </head>
+  <body>
+     <div class="flex bg-[#0b0b0b]">
+      <div class="w-2/5 h-screen main1 transition-opacity duration-700 flex">
+        <div
+          class="h-[500px] relative top-10 flex justify-evenly items-center flex-col"
+        >
+          <h1 class="text-white w-full px-20 text-6xl">EMS</h1>
+          <div
+            class="h-96 w-[450px] flex items-start flex-col px-12 mx-10 justify-center gap-10"
+          >
+          <form action="{% url 'auth' %}" method="post" class=" h-80 flex flex-col justify-evenly" {% csrf_token %}
+            <h3 class="text-2xl text-white">Sign In</h3>
+            <div class="w-full">
+              <h4 class="text-xs pb-1 text-white input_heading" for="text">
+                Roll Number
+              </h4>
+              <input
+                class="inputE p-2 w-[300px] rounded-md bg-transparent border-2 border-white placeholder:text-gray-700 text-white outline-none transition-all"
+                type="text"
+                placeholder="Roll Number"
+                name="name"
+                required
+              />
+            </div>
+            <div class="w-full">
+              <h4 class="text-xs pb-1 text-white input_heading2" for="text">
+                Password
+              </h4>
+              <input
+                class="inputP p-2 w-full rounded-md bg-transparent border-2 border-white placeholder:text-gray-700 text-white outline-none transition-all"
+                type="password"
+                name="pass"
+                required
+              />
+              <div class="flex flex-row justify-between">
+                <a
+                  href="/"
+                  class="hover:underline text-[10px] mt-2 text-white input_footer"
+                >
+                  forgot password?
+                </a> 
+                <div class="flex mt-2 justify-center items-center gap-1">
+                  <input type="checkbox" name="rem_me" id="" />
+                  <label class="text-white text-[10px]" for="checkbox"
+                    >remember me</label -->
+                  >
+                </div>
+              </div>
+            </div>
+
+            <div class="flex flex-col justify-center items-end w-full">
+                <button
+                  type="submit"
+                  class="btn bg-white text-black outline-none w-full rounded-lg p-2"
+                >
+                  Login
+                </button>
+          </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- new section  -->
+      <!-- new section  -->
+      <!-- new section  -->
+
+      <div
+        class="w-3/5 text-white justify-center main2 transition-opacity duration-1000 flex"
+      >
+        <div
+          class="z-10 absolute bottom-24 right-0 opacity-0 w-[600px] leading-7 px-5 services transition-all duration-1000"
+        >
+          <h1 class="text-3xl text-right text-black">Services</h1>
+          <p class="text-[15px] mt-4">
+            <!-- Lorem ipsum dolor sit amet consectetur -->
+            <!-- <span class="text-black"
+              >adipisicing elit. Minima, ratione. Deleniti, illo</span
+            >
+            consequatur aliquam architecto,
+            <span class="text-black"
+              >delectus veritatis vel quia, aliquid repellendus</span
+            >
+            corrupti suscipit est Lorem
+            <span class="text-black"
+              >ipsum dolor sitamet consectetur adipisicing el it. Itaque</span
+            >
+            culpa sunt delectus quib
+            <span class="text-black"
+              >usdam dicta eos explicabo voluptatum aliquid molestias </span
+            >odit? -->
+          </p>
+        </div>
+        <!-- <div
+          class="z-10 absolute top-28 w-[600px] leading-7 px-5 about transition-all duration-1000"
+        >
+          <h1 class="text-3xl">About Us</h1>
+          <p class="text-[15px] mt-4">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima,
+            ratione. Deleniti, illo consequatur aliquam architecto, delectus
+            veritatis vel quia, aliquid repellendus corrupti suscipit est Lorem
+            ipsum dolor sit amet consectetur adipisicing elit.
+            <span class="text-black"> Itaque</span> culpa sunt delectus
+            quibusdam dicta eos explicabo voluptatum aliquid
+            <span class="text-black">molestias </span>
+            odit?
+          </p>
+        </div> -->
+        <div
+          class="flex gap-3 text-white text-4xl absolute top-10 right-14 px-5"
+        >
+          <div
+            class="z-10 rounded-full w-2 h-2 bg-white circle1 cursor-pointer"
+          ></div>
+          <div
+            class="z-10 rounded-full w-2 h-2 bg-gray-800 circle2 cursor-pointer"
+          ></div>
+        </div>
+        <img
+          src="{% static 'assets/pexels-kei-scampa-1201427-4004210.jpg' %}"
+          class="absolute right-0 h-screen imga"
+          alt=""
+        />
+      </div>
+    </div>
+  </body>
+</html>
