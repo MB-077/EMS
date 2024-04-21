@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,8 +8,8 @@
     <title>
       EMS
     </title>
-    <link rel="stylesheet" href="output.css" />
-    <script defer src="./../dist/script.js"></script>
+    <link rel="stylesheet" href="{% static 'output.css' %}" />
+    <script defer src="{% static 'script.js' %}"></script>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
@@ -23,15 +24,17 @@
           <div
             class="h-96 w-[450px] flex items-start flex-col px-12 mx-10 justify-center gap-7"
           >
+          <form action="{% url 'auth' %}" method="post"> {% csrf_token %}
             <h3 class="text-2xl text-white">Sign In</h3>
             <div class="w-full">
               <h4 class="text-xs pb-1 text-white input_heading" for="text">
-                Email Address
+                Roll Number
               </h4>
               <input
                 class="inputE p-2 w-full rounded-md bg-transparent border-2 border-white placeholder:text-gray-700 text-white outline-none transition-all"
-                type="email"
-                placeholder="123_be@thapar.edu"
+                type="text"
+                placeholder="Roll Number"
+                name="name"
                 required
               />
             </div>
@@ -42,6 +45,7 @@
               <input
                 class="inputP p-2 w-full rounded-md bg-transparent border-2 border-white placeholder:text-gray-700 text-white outline-none transition-all"
                 type="password"
+                name="pass"
                 required
               />
               <div class="flex flex-row justify-between">
@@ -52,7 +56,7 @@
                   forgot password?
                 </a> 
                 <div class="flex mt-2 justify-center items-center gap-1">
-                  <input type="checkbox" name="" id="" />
+                  <input type="checkbox" name="rem_me" id="" />
                   <label class="text-white text-[10px]" for="checkbox"
                     >remember me</label -->
                   >
@@ -61,14 +65,13 @@
             </div>
 
             <div class="flex flex-col justify-center items-end w-full">
-              <a href="UserPage.html" class="w-full">
                 <button
-                  type="button"
+                  type="submit"
                   class="btn bg-white text-black outline-none w-full rounded-lg p-2"
                 >
                   Login
                 </button>
-              </a>
+          </form>
             </div>
           </div>
         </div>
@@ -130,7 +133,7 @@
           ></div>
         </div>
         <img
-          src="./../assets/pexels-kei-scampa-1201427-4004210.jpg"
+          src="{% static 'assets/pexels-kei-scampa-1201427-4004210.jpg' %}"
           class="absolute right-0 h-screen imga"
           alt=""
         />

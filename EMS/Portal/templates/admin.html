@@ -8,15 +8,16 @@
 	<link rel="stylesheet" href="https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css">
 	<link rel="stylesheet" href="{% static 'admin.css' %}">
 	<script src="https://cdn.tailwindcss.com"></script>
-	<script src="{% static 'admin.js' %}"></script>
+	<script defer src="{% static 'admin.js' %}"></script>
 </head>
 <body>
 	<head>
+	  
 	  <body>
 		<div class="sidebar">
 		  <div class="logo-details">
 			
-			<img src="{% static 'logo.png' %}" alt="Logo" class = "bx licon icon">
+			<img src="{%static 'assets/logo.png' %}" alt="Logo" class = "bx licon icon">
 			<div class="logo_name">EMS</div>
 			<i class='bx bx-menu' id="btn"></i>
 		  </div>
@@ -59,48 +60,63 @@
 		  </ul>
 		</div>
 
-		<section class="home-section bg-red-200 w-[94.8vw]">
-		<div>
-			<h3 class="border-2  inline-block relative top-5 left-5">13 March , 2024</h3>
+		<section class="home-section  w-[94.8vw]">
+		
+		<div class="flex bg-white justify-evenly h-20 items-center relative top-20 left-16 w-[90%] rounded-md">
+			<div class="bg-green-200 w-1/3 px-20 mx-10 text-center rounded-md">
+				<h3 class='text-left' >Total Present</h3>
+				<h3 class='text-left'>4</h3>
+			</div>
+			<div class="bg-green-200 w-1/3 px-20 mx-10 text-center rounded-md">
+				<h3 class='text-left'>Total Absent</h3>
+				<h3 class="text-left">2</h3>
+			</div>
+			<div class="bg-green-200 w-1/3 px-20 mx-10 text-center rounded-md">
+				<h3 class='text-left'>Active Now</h3>
+				<h3 class='text-left'>2</h3>
+			</div>
 		</div>
 		<div>
-			<!-- upper part -->
-		</div>
-		<div>
-			<div class="table w-full">
-				<table>
-					<thead>
-						<tr>
-							<th>Name</th>
-							<th>Roll Number</th>
-							<th>Room</th>
-							<th>Room Status</th>
-							<th>Time</th>
-							<th>Status</th>
-							<!-- <th>Status</th>
-							<th>Action</th> -->
-						</tr>
-						</thead>
-						<tbody>
-							{% for data in datas %}
-								<tr>
-									{% for key, value in data.items %}
-										{% if key == 'username' %}
-										{% endif %}
-	
-										{% if key == 'room_light_status' or key == 'student_hostel_status' %}
-											<td><div class = " "><span>{{ value }}</span></div></td>
-										{% else %}
-											<th>{{ value }}</th>
-										{% endif %}
-									{% endfor %}
-								</tr>
-							{% endfor %}
-						</tbody>
-				</table>
+			<div class="bg-white rounded-md w-[90%] relative top-24 left-16">
+				<div class="table w-[99%] px-24 ">
+					<table>
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Roll Number</th>
+								<th>Room</th>
+								<th>Room Status</th>
+								<th>Time</th>
+								<th>Status</th>
+								
+							</tr>
+							</thead>
+							<tbody>
+								{% for data in datas %}
+									<tr>
+										{% for key, value in data.items %}
+											{% if key == 'username' %}
+											{% endif %}
+		
+											{% if key == 'room_light_status' or key == 'student_hostel_status' %}
+												<td><div class = " "><span>{{ value }}</span></div></d>
+											{% else %}
+												<td>{{ value }}</td>
+											{% endif %}
+										{% endfor %}
+									</tr>
+								{% endfor %}
+							</tbody>
+					</table>
+				</div>
 			</div>
 		</div>
 		</section>
+
+
+		
+	
+		<script src="{% static 'admin.js' %}"></script>
 	  </body>
 </body>
 </html>

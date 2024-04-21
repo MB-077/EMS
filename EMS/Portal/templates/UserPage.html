@@ -1,12 +1,13 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>UserLogin-page2</title>
-    <link rel="stylesheet" href="output.css" />
+    <link rel="stylesheet" href="{% static 'output.css' %}" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <script defer src="script2.js"></script>
+    <script defer src="{% static 'script2.js' %}"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
     <script>
@@ -58,7 +59,7 @@
               >
                 Important Contacts
               </h3>
-              <form action="">
+              <form action="{% url 'logout' %}" method="get">
                 <button
                   type="submit"
                   class="cursor-pointer w-[200px] h-8 px-2 rounded-md transition-all text-lg hover:bg-white hover:text-black text-left"
@@ -83,12 +84,12 @@
             class="relative top-10 left-10 flex w-fit justify-center items-center gap-7"
           >
             <img
-              src="./../assets/billi ho to humare jaisi.jpg"
+              src="{% static 'assets/billi ho to humare jaisi.jpg' %}"
               alt=""
               class="rounded-full w-32"
             />
             <div>
-              <h3 class="text-lg font-bold">Kanav Dhanda</h3>
+              <h3 class="text-lg font-bold">{{ student_name }}</h3>
               <h3 class="text-xs text-gray-500" id="datetime"></h3>  <!-- mention name of hostel here -->
             </div>
           </div>
@@ -108,7 +109,7 @@
                   <h3
                     class="text-lg px-2 shadow-lg bg-[#fbfbfb] rounded-md h-10 flex items-center"
                   >
-                    A-123
+                    {{ student_room_no }}
                   </h3>
                 </div>
 
@@ -117,7 +118,7 @@
                   <h3
                     class="text-lg px-2 shadow-lg rounded-md bg-[#fbfbfb] h-10 flex items-center"
                   >
-                    Present
+                    {{ student_hostel_status }}
                   </h3>
                 </div>
               </div>
@@ -149,7 +150,7 @@
               <div>
                 <button
                   type="button"
-                  class="text-left bg-[#fbfbfb] px-2 w-[100%] rounded-md shadow-lg h-10 flex items-center relative top-3 LeaveReq"
+                  class="text-left bg-[#fbfbfb] px-2 w-[100%] rounded-md shadow-lg h-10 flex items-center relative top-8 LeaveReq"
                 >
                   Forward Leave Request
                 </button>
@@ -162,32 +163,35 @@
     <div
       class="relative hidden justify-center items-center h-screen w-screen PopUp z-10 transition-all duration-500"
     >
-      <div class="w-[60%] h-[50%] bg-green-400">
-        <div><h2>Request Permission</h2></div>
-        <div>
-          <div class="text-left flex flex-col gap-2 mb-3">
+      <div class="w-[50%] h-[55%] bg-white rounded-md shadow-lg">
+        <div class="text-2xl font-bold text-center mt-5"><h2>Request Permission</h2></div>
+        <div class="relative top-7">
+          <div class="text-left flex flex-col gap-2 mb-3 mx-20">
             <h3 class="text-sm">Permission Date:</h3>
             <input
               class="text-lg px-2 shadow-lg bg-[#fbfbfb] rounded-md h-10 flex items-center" type="date" placeholder="1/01/2024"
             >
-              A-123
+              
             </input>
           </div>
-          <div class="text-left flex flex-col gap-2 mb-3">
+          <div class="text-left flex flex-col gap-2 mb-3 mx-20">
             <h3 class="text-sm">Out Time:</h3>
-            <h3
-              class="text-lg px-2 shadow-lg bg-[#fbfbfb] rounded-md h-10 flex items-center"
+            <input
+              class="text-lg px-2 shadow-lg bg-[#fbfbfb] rounded-md h-10 flex items-center" type="date"
             >
-              A-123
-            </h3>
+              
+            </input>
           </div>
-          <div class="text-left flex flex-col gap-2 mb-3">
+          <div class="text-left flex flex-col gap-2 mb-3 mx-20">
             <h3 class="text-sm">In Time</h3>
             <h3
               class="text-lg px-2 shadow-lg bg-[#fbfbfb] rounded-md h-10 flex items-center"
             >
-              A-123
+              Location 
             </h3>
+          </div>
+          <div>
+            <button type="submit" class="bg-white w-24 h-10 rounded ml-20 mt-2 border-1 border-[#fbfbfb] shadow-lg">Submit</button>
           </div>
         </div>
       </div>
