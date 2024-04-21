@@ -63,20 +63,17 @@
 
 		<section class="home-section  w-[94.8vw]">
 		
-		<div class="flex bg-white justify-evenly h-20 items-center relative top-20 left-16 w-[90%] rounded-md">
-			<div class="bg-sky-200 w-1/3 px-20 mx-10 text-center rounded-md">
-				<h3 class='text-center' >Total Present</h3>
-				<h3 class='text-center'>4</h3>
+			<div class="flex bg-white justify-evenly h-20 items-center relative top-20 left-16 w-[90%] rounded-md">
+				<div class="bg-sky-200 w-1/3 px-20 mx-10 text-center rounded-md">
+					<h3 class='text-center'>Total Present: {{ total_present }}</h3>
+				</div>
+				<div class="bg-red-200 w-1/3 px-20 mx-10 text-center rounded-md">
+					<h3 class='text-center'>Total Absent: {{ total_absent }}</h3>
+				</div>
+				<div class="bg-green-200 w-1/3 px-20 mx-10 text-center rounded-md">
+					<h3 class='text-center'>Active Now: {{ active_now }}</h3>
+				</div>
 			</div>
-			<div class="bg-red-200 w-1/3 px-20 mx-10 text-center rounded-md">
-				<h3 class='text-center'>Total Absent</h3>
-				<h3 class="text-center">2</h3>
-			</div>
-			<div class="bg-green-200 w-1/3 px-20 mx-10 text-center rounded-md">
-				<h3 class='text-center'>Active Now</h3>
-				<h3 class='text-center'>2</h3>
-			</div>
-		</div>
 		<div>
 			<div class="bg-white rounded-md w-[90%] h-[67vh] relative top-24 left-16">
 				<div class="table w-[100%] h-[60%] px-24 relative top-7">

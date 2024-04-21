@@ -12,31 +12,47 @@ def home(request):
     except KeyError:
         return render(request, "index.html")
 
+from django.db.models import F
+from django.db.models import Count
+
+
 def dashboard(request):
     user = User_Login.objects.get(student_roll_no=request.COOKIES.get("username"))
 
     if user.user_type == "Admin":
+        # Count total present students
+        total_present = Student.objects.filter(student_hostel_status=True).count()
+
+        # Count total absent students
+        total_absent = Student.objects.filter(student_hostel_status=False).count()
+
+        # Fetching all students with their corresponding rooms
+        students_with_rooms = Student.objects.select_related().all()
+
+        # Constructing data for rendering
         datas = []
-        n = User_Login.objects.exclude(user_type="Admin")
-        print(f'\n{n}\n')
-        for pk in n:
-            data = {}
-            data["student_name"] = Student.objects.get(pk=pk.student_roll_no).student_name
-            data["student_roll_no"] = Student.objects.get(pk=pk.student_roll_no).student_roll_no
-            data["student_room_no"] = Student.objects.get(pk=pk.student_roll_no).student_room_no
-            data["student_hostel_out_time"] = Student.objects.get(pk=pk.student_roll_no).student_hostel_out_time
-            data["student_hostel_status"] = change_status(Student.objects.get(pk=pk.student_roll_no).student_hostel_status)
-            data["room_light_status"] =  "Off" if data["student_hostel_status"] == "Outside Hostel" else "On"
+        for student in students_with_rooms:
+            data = {
+                "student_name": student.student_name,
+                "student_roll_no": student.student_roll_no,
+                "student_room_no": student.student_room_no,
+                "student_hostel_out_time": student.student_hostel_out_time,
+                "student_hostel_status": change_status(student.student_hostel_status),
+                "room_light_status": no_students_present_in_room(student.student_room_no)
+            }
             datas.append(data)
-        return render(request, "admin.html", {"datas" : datas, "username" : request.COOKIES.get("username")})
+
+        return render(request, "admin.html", {"datas": datas, "username": request.COOKIES.get("username"),
+                                              "total_present": total_present, "total_absent": total_absent,
+                                              "active_now": total_present})
     else:
-        data = {}
-        data["student_name"] = Student.objects.get(pk=user.student_roll_no).student_name
-        data["student_room_no"] = Student.objects.get(pk=user.student_roll_no).student_room_no
-        data["student_hostel_status"] = change_status(Student.objects.get(pk=user.student_roll_no).student_hostel_status)
+        data = {
+            "student_name": Student.objects.get(student_roll_no=user.student_roll_no).student_name,
+            "student_room_no": Student.objects.get(student_roll_no=user.student_roll_no).student_room_no,
+            "student_hostel_status": change_status(Student.objects.get(student_roll_no=user.student_roll_no).student_hostel_status)
+        }
 
         return render(request, "UserPage.html", data)
-    
 
 def logout(request):
     response = HttpResponseRedirect(reverse("home"))
@@ -73,3 +89,11 @@ def change_status(hostel_status):
         return "Inside Hostel"
     else :
         return "Outside Hostel"
+    
+def no_students_present_in_room(room_number):
+    # Get the room object
+    number_of_students = Student.objects.filter(student_room_no=room_number)
+    if number_of_students.filter(student_hostel_status=True).count() == 0:
+        return "Off"
+    else:
+        return "On"
